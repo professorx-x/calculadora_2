@@ -1,0 +1,20 @@
+.group_botton .num_button, .group_botton .carac_button, .group_botton .opera_button
+{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.group_botton .num_button
+{
+    background-color: rgb(238, 241, 239);
+}
+
+.group_botton .carac_button
+{
+    background-color: rgb(203, 203, 216);
+}
+
+.group_botton .opera_button
+{
+    background-color: orange;
+}

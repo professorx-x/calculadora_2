@@ -1,0 +1,20 @@
+.group_botton
+{
+    width: 90%;
+    height: 360px;
+    
+    border-radius: 5px;
+    
+    background-color: white;
+
+    padding: 5px;
+
+    display: grid;
+    /*
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: repeat(6, 60px);
+    */
+
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(4, 25%);
+}

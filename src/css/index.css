@@ -1,0 +1,19 @@
+html, body
+{
+    width: 100%;
+    height: 100%;
+    /* background-image: linear-gradient(to right, rgb(148, 148, 226), rgb(209, 100, 100)); */
+    /* background-image: radial-gradient(rgb(6, 6, 59), rgb(23, 23, 121), rgb(63, 63, 167),rgb(127, 90, 187)); */
+    background-image: linear-gradient(to top, rgb(6, 6, 59), rgb(23, 23, 121), rgb(35, 35, 134),rgb(101, 59, 168), rgb(164, 112, 248));
+    
+    margin-top: 0;
+    margin-left: 0;
+}
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
