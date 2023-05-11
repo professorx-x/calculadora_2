@@ -1,10 +1,10 @@
 import React from 'react';
 
 import '../css/buttons_calc.css';
-import Display from './display';
+// import Display from './display';
 
-var func_array = Array();
-
+// var func_array = Array();
+var func_array = [];
 
 export default class func_bot extends React.Component
 {
@@ -23,15 +23,15 @@ export default class func_bot extends React.Component
         const pri_display = document.querySelector('#pri_display');
         const sec_display = document.querySelector('#sec_display');
 
-        if(carac == "AC")
+        if(carac === "AC")
         {
             sec_display.innerHTML = "";
             pri_display.value = "0";
             func_array = Array();
         }
-        else if(func_array.length == 0)
+        else if(func_array.length === 0)
         {
-            if(tipo != "num")
+            if(tipo !== "num")
             {
                 sec_display.innerHTML = "Nao e numero";
             }
@@ -48,7 +48,7 @@ export default class func_bot extends React.Component
             let msg = "";
             let finalizar = false;
 
-            if(tipo == "num")
+            if(tipo === "num")
             {
                 func_array.push(parseInt(carac));    
             }
@@ -90,7 +90,7 @@ export default class func_bot extends React.Component
             }
 
 
-            if(finalizar == true )
+            if(finalizar === true )
             {
                 let resultado = 0;
                 let form_string_int = "";
@@ -100,11 +100,11 @@ export default class func_bot extends React.Component
                 {
                     let elemnt = func_array[i];
                     
-                    if(typeof(elemnt) == "number" )
+                    if(typeof(elemnt) === "number" )
                     {
                         form_string_int = form_string_int + elemnt;
                     }
-                    else if( i == (func_array.length - 1))
+                    else if( i === (func_array.length - 1))
                     {
                         new_str_display.push( parseInt(form_string_int) );
                     }
@@ -117,15 +117,15 @@ export default class func_bot extends React.Component
                 }
 
 
-                let multi_div = ["*", "/"];
-                let find_pri_oper = false;
-                let new_str_display_2 = Array();
+                // let multi_div = ["*", "/"];
+                // let find_pri_oper = false;
+                // let new_str_display_2 = Array();
                 
                 console.log(new_str_display);
 
                 for(let i = 0; i < new_str_display.length; i++)
                 {
-                    if(new_str_display[i] == "*")
+                    if(new_str_display[i] === "*")
                     {
                         let new_element = new_str_display[i - 1] * new_str_display[i + 1];
                         resultado = new_element;  
@@ -133,12 +133,12 @@ export default class func_bot extends React.Component
                         new_str_display_2.splice((i - 1), 1, new_element);
                         let new_str_display_2_part = new_str_display.splice( (i + 2) );
                         new_str_display = new_str_display_2.concat(new_str_display_2_part);
-                        new_str_display_2 = Array();
+                        new_str_display_2 = [];
                         i = -1;
 
                         console.log(new_str_display);
                     }
-                    else if(new_str_display[i] == "/")
+                    else if(new_str_display[i] === "/")
                     {
                         let new_element = new_str_display[i - 1] / new_str_display[i + 1];
                         resultado = new_element;  
@@ -146,7 +146,7 @@ export default class func_bot extends React.Component
                         new_str_display_2.splice((i - 1), 1, new_element);
                         let new_str_display_2_part = new_str_display.splice( (i + 2) );
                         new_str_display = new_str_display_2.concat(new_str_display_2_part);
-                        new_str_display_2 = Array();
+                        new_str_display_2 =´[];
                         i = -1;
 
                         console.log(new_str_display);
@@ -158,23 +158,23 @@ export default class func_bot extends React.Component
                 }
 
                 new_str_display = new_str_display_2;
-                new_str_display_2 = Array();
+                new_str_display_2 = [];
 
                 for(let i = 0; i < new_str_display.length; i++)
                 {
-                    if(new_str_display[i] == "+")
+                    if(new_str_display[i] === "+")
                     {
                         let new_element = new_str_display[i - 1] + new_str_display[i + 1];
                         resultado = new_element;  
                         new_str_display_2.splice((i - 1), 1, new_element);
                         let new_str_display_2_part = new_str_display.splice( (i + 2) );
                         new_str_display = new_str_display_2.concat(new_str_display_2_part);
-                        new_str_display_2 = Array();
+                        new_str_display_2 = [];
                         i = -1;
 
                         console.log(new_str_display);
                     }
-                    else if(new_str_display[i] == "-")
+                    else if(new_str_display[i] === "-")
                     {
                         let new_element = new_str_display[i - 1] - new_str_display[i + 1];
                         resultado = new_element;  
