@@ -4,7 +4,7 @@ import ButtonCalc from './buttons_calc';
 
 import '../css/group_botton.css';
 
-export default () => 
+const bots = () => 
 {
     return <div className="group_botton"> 
         <ButtonCalc carac="7" tipo="num"/>
@@ -29,3 +29,5 @@ export default () =>
         
     </div>;
 }
+
+export default bots;
