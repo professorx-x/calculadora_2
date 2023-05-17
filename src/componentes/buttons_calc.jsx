@@ -1,9 +1,6 @@
 import React from 'react';
 
 import '../css/buttons_calc.css';
-// import Display from './display';
-
-// var func_array = Array();
 var func_array = [];
 
 export default class func_bot extends React.Component
@@ -117,9 +114,7 @@ export default class func_bot extends React.Component
                 }
 
 
-                // let multi_div = ["*", "/"];
-                // let find_pri_oper = false;
-                // let new_str_display_2 = Array();
+                let new_str_display_2 = Array();
                 
                 console.log(new_str_display);
 
@@ -146,7 +141,7 @@ export default class func_bot extends React.Component
                         new_str_display_2.splice((i - 1), 1, new_element);
                         let new_str_display_2_part = new_str_display.splice( (i + 2) );
                         new_str_display = new_str_display_2.concat(new_str_display_2_part);
-                        new_str_display_2 =´[];
+                        new_str_display_2 = [];
                         i = -1;
 
                         console.log(new_str_display);
